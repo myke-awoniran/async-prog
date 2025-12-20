@@ -1,11 +1,16 @@
+mod threads;
+mod fibers_and_green_threads;
+
 use std::arch::asm;
 use std::io::{Error, ErrorKind};
+use threads::run_threads;
 
 fn main() -> Result<(), Error> {
+    run_threads();
     let t = 100;
-    let t_ptr: *const usize = &t;
-    let x = dereference(t_ptr);
-    println!("{}", x);
+    // let t_ptr: *const usize = &t;
+    // let x = dereference(t_ptr);
+    // println!("{}", x);
     Ok(())
 }
 

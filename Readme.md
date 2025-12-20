@@ -140,7 +140,7 @@ Task B → Stack B
 **Definition**  
 Tasks do **not** have their own stack.
 
-They are compiled into **state machines** and resume execution using the thread’s stack.
+They are compiled into **Finite state machines** and resume execution using the thread’s stack.
 
 **Examples**
 
@@ -149,13 +149,12 @@ They are compiled into **state machines** and resume execution using the thread�
 - Rust `Future`
 - C# async state machines
 
-**Key Insight**
+**Threads**
 
-```text
-async function foo() {
-  await bar();
-  baz();
-}
+Each Thread has it own stack
+
+Note: Each Os thred comes with its own stack, and even though many systems allow this size to be configured, they are
+still fixed in size and can't grow or shrink. They are after all, the cause of **STACK OVERFLOW**
 
 
 
