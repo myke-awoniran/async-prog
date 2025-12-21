@@ -1,11 +1,13 @@
+// What does this file do?
+// Telling rust to use the syscall instruction on macos aarch64(Newer mac chips to
+// to print to the console using raw syscalls instead of std::io::stdout or println!
 use ::std::arch::asm;
 
 #[cfg(all(target_os = "macos", target_arch = "aarch64"))]
 #[inline(never)]
-pub fn syscall(message: String) {
+pub fn syscall(message: &str) {
     let ptr = message.as_ptr();
     let len = message.len();
-
     unsafe {
         asm!(
         "mov x16, 4",
