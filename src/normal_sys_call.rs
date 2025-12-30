@@ -11,10 +11,8 @@ pub fn normal_syscall(message: &str) -> io::Result<()> {
     let msg_ptr = message.as_ptr();
     let len = message.len();
     let res = unsafe { write(1, msg_ptr, len) };
-
     if res == -1 {
         return Err(io::Error::last_os_error());
     }
-
     Ok(())
 }

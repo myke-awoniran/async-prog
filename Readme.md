@@ -1,4 +1,18 @@
-# Asynchronous Programming - Personal Study Notes
+# Asynchronous Programming::Personal Study Notes
+
+What is Asynchronous Programming?
+Before I define this, I will like to talk about the two computer science concepts of multitasking
+
+1. Concurrency
+2. Parallelism
+
+so my own mental model of asynchronous is that the asynchronous programming doesn't exist to the OS
+it exists to the programmer or the language/runtime the programmer is using.
+
+so now, what's asynchronous programming?
+
+It's an abstraction layer over concurrency... it's giving the ability to the programmer to write code that looks
+synchronous but actually execute "concurrently" or "in parallel" .
 
 This document captures my personal study and mental model of **asynchronous programming**, **concurrency**, and **task
 scheduling** as they relate to modern programming languages and operating systems.
