@@ -1,10 +1,10 @@
 mod fibers_and_green_threads;
 mod normal_sys_call;
-mod raw_sys_Calls;
+mod raw_sys_calls;
 mod threads;
 
 use normal_sys_call::normal_syscall;
-use raw_sys_Calls::syscall;
+use raw_sys_calls::syscall;
 use std::arch::asm;
 use std::io::{Error, ErrorKind};
 use threads::run_threads;
